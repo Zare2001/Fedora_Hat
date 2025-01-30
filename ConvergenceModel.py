@@ -34,7 +34,7 @@ X_test_scaled = scaler.transform(X_test)
 
 # Build neural network
 model = tf.keras.Sequential([
-    tf.keras.layers.Dense(64, activation='relu', input_shape=(2,)),
+    tf.keras.layers.Dense(64, activation='relu', input_shape=(3,)),
     tf.keras.layers.Dropout(0.3),
     tf.keras.layers.Dense(32, activation='relu'),
     tf.keras.layers.Dense(1, activation='sigmoid')
@@ -59,17 +59,29 @@ def predict_convergence(timer,k_decision, rejection_threshold):
     return prob >= 0.5  # Threshold at 0.5
 
 # Example: Predict for K=1, Threshold=5.5
-print(predict_convergence(1, 5.5))  # Output: True/False
+print(predict_convergence(1,1, 5.5))  # Output: True/False
 
 # Generate a grid of parameters to explore
+t_values = np.arange(1, 5) 
 k_values = np.arange(1, 5)  # K_decision ranges from 1-4
 thresholds = np.linspace(1, 15, 50)  # Thresholds from 1 to 15
 
 converged_params = []
-for k in k_values:
-    for t in thresholds:
-        if predict_convergence(k, t):
-            converged_params.append((k, t))
+for t in t_values:
+    for k in k_values:
+        for th in thresholds:
+            if predict_convergence(t, k, th):
+                converged_params.append((t, k, th))
+                
+# Convert to a NumPy array, find unique rows
+unique_params = np.unique(converged_params, axis=0)
 
+# Print them if you want
 print("Suggested parameters for convergence:")
-print(np.unique(converged_params, axis=0))
+print(unique_params)
+
+# Save to CSV
+df_params = pd.DataFrame(unique_params, columns=['Timer', 'K_decision', 'Threshold'])
+df_params.to_csv('converged_params.csv', index=False)
+
+print("Saved converged_params.csv with columns [Timer, K_decision, Threshold].")
