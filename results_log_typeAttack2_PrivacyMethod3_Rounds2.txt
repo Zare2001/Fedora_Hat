@@ -1,0 +1,60 @@
+After Round 1:
+For noise 0:
+  PDMM Average -> Test Loss: 2.1700, Test Accuracy: 10.03%
+  True Average -> Test Loss: 2.1788, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.1700, Test Accuracy: 10.03%
+
+After Round 2:
+For noise 0:
+  PDMM Average -> Test Loss: 0.8403, Test Accuracy: 69.70%
+  True Average -> Test Loss: 0.8254, Test Accuracy: 69.82%
+  Incorrect True Average -> Test Loss: 0.8255, Test Accuracy: 69.70%
+
+After Round 1:
+For noise 0.01:
+  PDMM Average -> Test Loss: 2.1748, Test Accuracy: 10.03%
+  True Average -> Test Loss: 2.1804, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.1716, Test Accuracy: 10.03%
+
+After Round 2:
+For noise 0.01:
+  PDMM Average -> Test Loss: 0.8290, Test Accuracy: 70.35%
+  True Average -> Test Loss: 0.8289, Test Accuracy: 70.35%
+  Incorrect True Average -> Test Loss: 0.8290, Test Accuracy: 70.35%
+
+After Round 1:
+For noise 1:
+  PDMM Average -> Test Loss: 2.1727, Test Accuracy: 10.03%
+  True Average -> Test Loss: 2.1778, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.1694, Test Accuracy: 10.03%
+
+After Round 2:
+For noise 1:
+  PDMM Average -> Test Loss: 0.8294, Test Accuracy: 69.86%
+  True Average -> Test Loss: 0.8295, Test Accuracy: 69.69%
+  Incorrect True Average -> Test Loss: 0.8294, Test Accuracy: 69.86%
+
+After Round 1:
+For noise 100:
+  PDMM Average -> Test Loss: 2.1717, Test Accuracy: 10.03%
+  True Average -> Test Loss: 2.1798, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.1717, Test Accuracy: 10.03%
+
+After Round 2:
+For noise 100:
+  PDMM Average -> Test Loss: 0.8247, Test Accuracy: 70.24%
+  True Average -> Test Loss: 0.8248, Test Accuracy: 70.19%
+  Incorrect True Average -> Test Loss: 0.8247, Test Accuracy: 70.24%
+
+After Round 1:
+For noise 10000:
+  PDMM Average -> Test Loss: 2.1722, Test Accuracy: 10.03%
+  True Average -> Test Loss: 2.1800, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.1722, Test Accuracy: 10.03%
+
+After Round 2:
+For noise 10000:
+  PDMM Average -> Test Loss: 0.8507, Test Accuracy: 70.47%
+  True Average -> Test Loss: 0.8256, Test Accuracy: 70.44%
+  Incorrect True Average -> Test Loss: 0.8255, Test Accuracy: 70.42%
+

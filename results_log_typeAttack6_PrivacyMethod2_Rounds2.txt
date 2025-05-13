@@ -1,0 +1,48 @@
+After Round 1:
+For SMPC:
+  PDMM Average -> Test Loss: 1.0638, Test Accuracy: 74.49%
+  True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+  Incorrect True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+
+After Round 2:
+For SMPC:
+  PDMM Average -> Test Loss: 1.0822, Test Accuracy: 73.11%
+  True Average -> Test Loss: 2.2106, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.2106, Test Accuracy: 10.03%
+
+After Round 1:
+For SMPC:
+  PDMM Average -> Test Loss: 1.0638, Test Accuracy: 74.49%
+  True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+  Incorrect True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+
+After Round 2:
+For SMPC:
+  PDMM Average -> Test Loss: 1.0822, Test Accuracy: 73.11%
+  True Average -> Test Loss: 2.2106, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.2106, Test Accuracy: 10.03%
+
+After Round 1:
+For SMPC:
+  PDMM Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+  True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+  Incorrect True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+
+After Round 2:
+For SMPC:
+  PDMM Average -> Test Loss: 0.8297, Test Accuracy: 69.84%
+  True Average -> Test Loss: 0.8297, Test Accuracy: 69.84%
+  Incorrect True Average -> Test Loss: 0.8297, Test Accuracy: 69.84%
+
+After Round 1:
+For SMPC:
+  PDMM Average -> Test Loss: 1.0818, Test Accuracy: 74.48%
+  True Average -> Test Loss: 2.1788, Test Accuracy: 10.03%
+  Incorrect True Average -> Test Loss: 2.2000, Test Accuracy: 10.01%
+
+After Round 2:
+For SMPC:
+  PDMM Average -> Test Loss: 1.1052, Test Accuracy: 73.32%
+  True Average -> Test Loss: 2.1812, Test Accuracy: 10.06%
+  Incorrect True Average -> Test Loss: 2.2163, Test Accuracy: 10.03%
+

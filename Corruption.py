@@ -36,15 +36,15 @@ def CorruptData(Corrupt, node_model_s, typeAttack, var, mean, Target ,num_client
                     param.data = benign_mean + 0.08 * benign_std  # z = 0.08  For 0.5326 = CDF
             elif typeAttack == 5:
                 for key, param in node_model_s[i].named_parameters():
-                    all_benign_params = [
-                        node_model_s[j].state_dict()[key]
-                        for j in range(num_clients)
-                        if Corrupt[j] == 0 
-                    ]
+                    # all_benign_params = [
+                    #     node_model_s[j].state_dict()[key]
+                    #     for j in range(num_clients)
+                    #     if Corrupt[j] == 0 
+                    # ]
                     
-                    benign_mean = torch.mean(torch.stack(all_benign_params), dim=0)
-                    param.data = -scale * benign_mean
-                    param.data.add_(torch.randn_like(param.data) * np.sqrt(var) + mean)
+                    # benign_mean = torch.mean(torch.stack(all_benign_params), dim=0)
+                    param.data = -scale * param.data
+                    # param.data.add_(torch.randn_like(param.data) * np.sqrt(var) + mean)
                 
     return node_model_s
 
