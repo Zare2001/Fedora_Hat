@@ -2,7 +2,7 @@ import torch
 import copy
 import numpy as np
 
-def CorruptData(Corrupt, node_model_s, typeAttack, var, mean, Target ,num_clients, scale):
+def CorruptData_update(Corrupt, node_model_s, typeAttack, var, mean, Target ,num_clients, scale):
     if typeAttack == 0:
         return node_model_s
     
@@ -47,6 +47,47 @@ def CorruptData(Corrupt, node_model_s, typeAttack, var, mean, Target ,num_client
                     # param.data.add_(torch.randn_like(param.data) * np.sqrt(var) + mean)
                 
     return node_model_s
+
+def CorruptData(Corrupt, gradients, typeAttack, var, mean, Target, num_clients, scale):
+    if typeAttack == 0:
+        return gradients
+
+    # Deep copy to avoid mutating original gradients
+    corrupted_gradients = copy.deepcopy(gradients)
+
+    for i in range(num_clients):
+        if Corrupt[i] == 1:
+            if typeAttack == 1:  # Completely random gradients
+                for key in corrupted_gradients[i]:
+                    corrupted_gradients[i][key] = torch.rand_like(corrupted_gradients[i][key]) * np.sqrt(var) + mean
+
+            elif typeAttack == 3:  # Add Gaussian noise to gradients
+                for key in corrupted_gradients[i]:
+                    corrupted_gradients[i][key] += torch.randn_like(corrupted_gradients[i][key]) * np.sqrt(var) + mean
+
+            elif typeAttack == 4:  # LIE attack in gradient space
+                for key in corrupted_gradients[i]:
+                    # Collect benign gradients for this key
+                    benign_grads = [
+                        gradients[j][key]
+                        for j in range(num_clients)
+                        if Corrupt[j] == 0
+                    ]
+                    if not benign_grads:
+                        continue  # Skip if no benign grads (edge case)
+                    
+                    benign_mean = torch.mean(torch.stack(benign_grads), dim=0)
+                    benign_std  = torch.std(torch.stack(benign_grads), dim=0)
+                    
+                    # Push the malicious gradient slightly away from mean
+                    z = 0.08  # Typically 0.05–0.15 works well
+                    corrupted_gradients[i][key] = benign_mean + z * benign_std
+
+            elif typeAttack == 5:  # Sign flip gradients
+                for key in corrupted_gradients[i]:
+                    corrupted_gradients[i][key] = -scale * corrupted_gradients[i][key]
+
+    return corrupted_gradients
 
 def CorruptGeneration(percentageCorrupt, corrupt, num_clients):
     if corrupt:
