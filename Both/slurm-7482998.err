@@ -1,0 +1,2 @@
+/home/zpalanciyan/Thesis_Code/Both/AverageFed9.py:592: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()

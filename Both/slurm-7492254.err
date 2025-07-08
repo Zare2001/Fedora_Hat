@@ -1,0 +1,3 @@
+/home/zpalanciyan/Thesis_Code/Both/AverageFed6.py:592: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+slurmstepd: error: *** JOB 7492254 ON gpu020 CANCELLED AT 2025-06-23T19:43:24 ***

@@ -151,4 +151,5 @@ num_cols = ["attack","privacy","noise","step",
             "FAR","MDR","accuracy","loss"]
 df_long[num_cols] = df_long[num_cols].apply(pd.to_numeric, errors="coerce")
 
-plot_noise_sweep(df_long, attack=3, privacy=3, save=True)
+plot_noise_sweep(df_long, attack=0, privacy=3, save=True)
+

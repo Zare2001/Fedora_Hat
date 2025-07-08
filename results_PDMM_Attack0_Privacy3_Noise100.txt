@@ -1,1 +1,0 @@
-Round 0  FAR=0.000 | MDR=0.000 | loss=1505529.6250 | acc=11.15%Round 1  FAR=0.000 | MDR=0.000 | loss=1324697.8680 | acc=9.08%Round 0  FAR=0.000 | MDR=0.000 | loss=1505529.6250 | acc=11.15%Round 1  FAR=0.000 | MDR=0.000 | loss=1324697.8680 | acc=9.08%Round 2  FAR=0.000 | MDR=0.000 | loss=630278.7928 | acc=10.16%
